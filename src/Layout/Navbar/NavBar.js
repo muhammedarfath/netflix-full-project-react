@@ -39,12 +39,12 @@ function NavBar() {
                 </div>
                 {/* search form */}
                 <div className="col-span-3 flex items-center justify-end space-x-4 gap-3">
-                    <form className="flex items-center overflow-hidden">
-                        <button type="submit" className="text-white p-2">
+                    {/* <form className="flex items-center overflow-hidden"> */}
+                        {/* <button type="submit" className="text-white p-2"> */}
                         <FaSearch className="text-white cursor-pointer" style={{ fontSize: '20px' }} />
-                        </button>
-                        <input type="text" placeholder="Search..." className="border-b-2 border-white bg-transparent text-white outline-none focus:border-subMain" />
-                    </form>
+                        {/* </button> */}
+                        {/* <input type="text" placeholder="Search..." className="border-b-2 border-white bg-transparent text-white outline-none focus:border-subMain" /> */}
+                    {/* </form> */}
                     <NavLink to='/kids' className={Hover} activeClassName="text-subMain" style={{ fontSize: '15px' }}>
                         KIDS
                     </NavLink>

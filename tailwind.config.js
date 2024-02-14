@@ -19,11 +19,12 @@ module.exports = {
       colors:{
         main:'#000',
         subMain:'#F20000',
-        dry:'#0B0F29',
+        dry:'#000',
         star: '#FFB000',
         text: '#C0C0C0',
         border:'#4b5563',
         dryGray: '#E0D5D5',
+        
       }
     },
   },
