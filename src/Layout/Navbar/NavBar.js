@@ -43,7 +43,6 @@ function NavBar() {
                         {/* <button type="submit" className="text-white p-2"> */}
                         <FaSearch className="text-white cursor-pointer" style={{ fontSize: '20px' }} />
                         {/* </button> */}
-                        {/* <input type="text" placeholder="Search..." className="border-b-2 border-white bg-transparent text-white outline-none focus:border-subMain" /> */}
                     {/* </form> */}
                     <NavLink to='/kids' className={Hover} activeClassName="text-subMain" style={{ fontSize: '15px' }}>
                         KIDS

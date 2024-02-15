@@ -20,6 +20,7 @@ module.exports = {
         main:'#000',
         subMain:'#F20000',
         dry:'#000',
+        promo:'#141414',
         star: '#FFB000',
         text: '#C0C0C0',
         border:'#4b5563',
