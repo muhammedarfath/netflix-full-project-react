@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Titles from '../Titles'
-import { BsCollectionFill } from 'react-icons/bs'
 import axios from '../../axios'
 import Movie from '../Movie'
 import { Link } from 'react-router-dom'
 
 function RowMovies(props) {
     const [movies, setMovies] = useState([])
-    console.log(props)
+
 
     useEffect(() => {
         axios.get(props.url).then((response) => {
@@ -31,13 +30,13 @@ function RowMovies(props) {
                 }
                 `}
             </style>
-            <Titles title={props.title} Icon={BsCollectionFill} />
+            <Titles title={props.title} Icon={props.icon} />
             <div className="row ml-1 mt-3 text-white">
                 <div className="posters flex overflow-x-auto overflow-y-hidden hide-scroll-bar">
                     {
                         movies.map((movie, index) => (
                             <Link key={index} to={`/movies/${movie.name}`} className='mr-1'>
-                                <Movie movie={movie} smallOrNot={props.isSmall ? '15rem' : '20rem'} />
+                                <Movie movie={movie} smallOrNot={props.isSmall ? '15rem' : '20rem'}  showRating={props.showTopRating ? true : false}/>
                             </Link>
 
                         ))

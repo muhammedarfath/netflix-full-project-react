@@ -3,19 +3,20 @@ import Layout from '../Layout/Layout'
 import Banner from '../Components/Home/Banner'
 import RowMovies from '../Components/Home/RowMovies'
 import Promos from '../Components/Home/Promos'
-import TopRated from '../Components/Home/TopRated'
-import { action,popular, originals } from '../urls'
+import { action,popular, originals,toprated } from '../urls'
+import { BsBookmarkStarFill, BsCollectionFill } from 'react-icons/bs'
 
 function HomeScreen() {
   return (
     <Layout>
         <div className=" mx-auto min-h-screen px-2 mb-6">
           <Banner/>
-          <RowMovies url={popular} title='Popular Movies'/>
-          <RowMovies url={originals} title='Netflix Originals' isSmall/>
-          <RowMovies url={action} title='Action'isSmall />
+          <RowMovies url={popular} title='Popular Movies' icon={BsCollectionFill}/>
+          <RowMovies url={originals} title='Netflix Originals' icon={BsCollectionFill} isSmall/>
+          <RowMovies url={action} title='Action'isSmall  icon={BsCollectionFill} />
           <Promos/>
-          <TopRated/>
+          <RowMovies url={toprated} title='Top Rated' icon={BsBookmarkStarFill} showTopRating />
+
         </div>
     </Layout>
     
