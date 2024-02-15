@@ -11,7 +11,6 @@ import { FaPlay } from "react-icons/fa6";
 
 function Banner() {
   const [movies, setMovies] = useState([]);
-
   useEffect(() => {
     axios
       .get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
@@ -24,7 +23,7 @@ function Banner() {
   return (
     <div className="relative w-full">
       <Swiper
-        direction="vertical"
+        direction="horizontal"
         slidesPerView={1}
         loop={true}
         speed={1000}
@@ -45,10 +44,9 @@ function Banner() {
                 <FaPlay/>
                 Play
                 </Link>
-                <button className="bg-subMain hover:text-main transitions text-white px-4 py-3 rounded font-medium sm:text-sm text-sm bg-opacity-30">
+                <button className="bg-main hover:text-main transitions text-white px-4 py-3 rounded font-medium sm:text-sm text-sm bg-opacity-30">
                   <FaHeart/>
                 </button>
-                <div className="banner-gradient" style={{position:'absolute',bottom: '0',left: '0',width: '100%',height:'7.4rem',backgroundImage: 'linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111)'}}></div>
               </div>
             </div>
           </SwiperSlide>
