@@ -13,7 +13,7 @@ function Movie({ movie,smallOrNot,showRating }) {
     >
       <img src={`${imageUrl + movie.backdrop_path}`} alt="" className="w-full h-full object-cover" />
       {isHovered && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 text-white">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-35 text-white">
           <h3 className="font-semibold text-center mb-2">{movie.name}</h3>
           {showRating && (
             <div className='flex gap-2 text-star'>

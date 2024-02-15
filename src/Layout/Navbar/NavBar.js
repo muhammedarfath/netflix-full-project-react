@@ -21,14 +21,14 @@ function NavBar() {
                 </div>
                 {/* menus */}
                 <div className="col-span-3 font-medium text-sm hidden xl:flex items-center space-x-8">
+                    <NavLink to='/' className={Hover} activeClassName="text-subMain">
+                        Home
+                    </NavLink>
+                    <NavLink to='/tv-shows' className={Hover} activeClassName="text-subMain">
+                         TV Shows
+                    </NavLink>
                     <NavLink to='/movies' className={Hover} activeClassName="text-subMain">
                         Movies
-                    </NavLink>
-                    <NavLink to='/about-us' className={Hover} activeClassName="text-subMain">
-                        About Us
-                    </NavLink>
-                    <NavLink to='/contact-us' className={Hover} activeClassName="text-subMain">
-                        Contact Us
                     </NavLink>
                     <NavLink to='/login' className={Hover} activeClassName="text-subMain">
                         Login
