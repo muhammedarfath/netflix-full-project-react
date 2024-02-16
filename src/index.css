@@ -1,10 +1,59 @@
 /* src/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body,
+
+
+
+@layer base {
+    body {
+        @apply bg-[#141414] overflow-x-hidden text-white !scrollbar-thin !scrollbar-track-transparent
+         !scrollbar-thumb-red-600;
+        
+    }
+
+    header {
+        @apply fixed top-0 z-50 flex w-full items-center justify-between px-4 py-4
+        transition-all lg:px-10 lg:py-6;
+    }
+}
+
+
+
+
+
+
+
+@layer components {
+    .headerLink {
+        @apply cursor-pointer text-sm font-light text-[rgb(229,229,229)] transition duration-[.4s]
+        hover:text-[#b3b3b3];
+    }
+
+    .bannerButton {
+        @apply flex items-center gap-x-2  rounded px-1.5 text-sm font-semibold transition
+        hover:opacity-75 md:py-2.5 md:px-8 md:text-xl ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body,
 html{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -15,10 +64,10 @@ textarea:focus,
 select:focus {
     outline: 0 !important;
     box-shadow: none !important;
-}
+} */
 
 /* Basic class for tailwind */
-.linear-bg{
+/* .linear-bg{
     background: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
 }
 
@@ -41,4 +90,4 @@ select:focus {
 }
 .zIndex{
     z-index: 1000;
-}
+} */

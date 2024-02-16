@@ -1,62 +1,61 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
-import { PiGiftBold } from "react-icons/pi";
-import { MdOutlineArrowDropDown } from "react-icons/md";
 
 
 function NavBar() {
-    const hover = "hover:text-subMain transition text-white";
-    const Hover = ({isActive}) => (isActive ? 'text-subMain ' : hover )
 
-    return (
-        <div className="bg-black bg-opacity-50 shadow-md sticky top-0 z-20" style={{ height: '59px' }}>
-            <div className="container mx-auto py-2 px-4 lg:px-2 lg:grid gap-6 grid-cols-7 justify-between items-center">
-                {/* logo  */}
-                <div className="col-span-1 lg:block hidden">
-                    <Link to='/'>
-                        <img src="/images/favicon.png" alt="logo" className="w-full h-8 m-2 object-contain " />
-                    </Link>
-                </div>
-                {/* menus */}
-                <div className="col-span-3 font-medium text-sm hidden xl:flex items-center space-x-8">
-                    <NavLink to='/' className={Hover} activeClassName="text-subMain">
-                        Home
-                    </NavLink>
-                    <NavLink to='/tv-shows' className={Hover} activeClassName="text-subMain">
-                         TV Shows
-                    </NavLink>
-                    <NavLink to='/movies' className={Hover} activeClassName="text-subMain">
-                        Movies
-                    </NavLink>
-                    <NavLink to='/login' className={Hover} activeClassName="text-subMain">
-                        Login
-                    </NavLink>
-                    <NavLink to='/favorite' className={Hover} activeClassName="text-subMain">
-                        Favorites
-                    </NavLink>
-                </div>
-                {/* search form */}
-                <div className="col-span-3 flex items-center justify-end space-x-4 gap-3">
-                    {/* <form className="flex items-center overflow-hidden"> */}
-                        {/* <button type="submit" className="text-white p-2"> */}
-                        <FaSearch className="text-white cursor-pointer" style={{ fontSize: '20px' }} />
-                        {/* </button> */}
-                    {/* </form> */}
-                    <NavLink to='/kids' className={Hover} activeClassName="text-subMain" style={{ fontSize: '15px' }}>
-                        KIDS
-                    </NavLink>
-                    <IoMdNotifications className="text-white cursor-pointer" style={{ fontSize: '20px' }} />
-                    <PiGiftBold className="text-white cursor-pointer" style={{ fontSize: '20px' }} />
-                    <div className="col-span-3 flex items-center justify-end space-x-1 gap-0">
-                        <img src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt=""  className="w-full h-8 object-contain " />
-                        <MdOutlineArrowDropDown style={{ fontSize: '20px' }}/>
-                    </div>
-                </div>
-            </div>
+  const [isScrolled,setIsScrolled] = useState(false)
+
+//   when scrolling the header color changes
+  useEffect(()=>{
+    const handleScroll = () =>{
+        if(window.scrollY > 0) {
+            setIsScrolled(true)
+        }else{
+            setIsScrolled(false)
+        }
+
+    }
+
+    window.addEventListener('scroll',handleScroll)
+
+    return () => {
+        window.removeEventListener('scroll',handleScroll)
+    }
+
+  },[])
+
+  
+
+  return (
+    <header className={`${isScrolled && 'bg-[#141414]'} `}>
+        {/* left area logo and menu items */}
+        <div className='flex items-center space-x-2 md:space-x-10'>
+            <img src="/images/favicon.png" width={100} height={100} alt="logo" className='cursor-pointer object-contain' />
+
+            <ul className='hidden space-x-4 md:flex'>
+                <li className='headerLink'>Home</li>
+                <li className='headerLink'>Tv Shows</li>
+                <li className='headerLink'>Movies</li>
+                <li className='headerLink'>New & Popular</li>
+                <li className='headerLink'>My List</li>
+            </ul>
+
         </div>
-    );
+        {/* right area icons */}
+        <div className='flex items-center space-x-4 text-sm font-light'>
+           <FaSearch className="hidden h-5 w-5 sm:inline" />
+           <p className='hidden lg:inline'>Kids</p>
+           <IoMdNotifications className="h-6 w-6"/>
+           <Link to='/account' >
+              <img src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="" className='w-full h-8 cursor-pointer object-contain'/>
+              
+           </Link>
+        </div>
+    </header>
+  )
 }
 
-export default NavBar;
+export default NavBar
