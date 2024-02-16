@@ -35,7 +35,7 @@ function RowMovies(props) {
                 <div className="posters flex overflow-x-auto overflow-y-hidden hide-scroll-bar">
                     {
                         movies.map((movie, index) => (
-                            <Link key={index} to={`/movies/${movie.name}`} className='mr-1'>
+                            <Link key={index} to={`/movie/${movie.name}`}  className='mr-1'>
                                 <Movie movie={movie} smallOrNot={props.isSmall ? '15rem' : '20rem'}  showRating={props.showTopRating ? true : false}/>
                             </Link>
 

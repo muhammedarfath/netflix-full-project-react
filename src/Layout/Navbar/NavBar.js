@@ -11,7 +11,7 @@ function NavBar() {
     const Hover = ({isActive}) => (isActive ? 'text-subMain ' : hover )
 
     return (
-        <div className="bg-main shadow-md sticky top-0 z-20" style={{ height: '59px' }}>
+        <div className="bg-black bg-opacity-50 shadow-md sticky top-0 z-20" style={{ height: '59px' }}>
             <div className="container mx-auto py-2 px-4 lg:px-2 lg:grid gap-6 grid-cols-7 justify-between items-center">
                 {/* logo  */}
                 <div className="col-span-1 lg:block hidden">
