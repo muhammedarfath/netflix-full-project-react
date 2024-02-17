@@ -53,7 +53,7 @@ function RowMovies({title,url,isLarge,showTopRating,icon}) {
                 </div>
 
                 <BsChevronRight className={`absolute top-0 bottom-0 right-0 z-40 m-auto h-9 w-9 
-                cursor-pointer opacity-0 transition hover:scale-125
+                cursor-pointer opacity-0 transition hover:scale-125 md:-top-7
                 group-hover:opacity-100 `} onClick={()=> handleClick('right')}/>
             </div>
         </div>

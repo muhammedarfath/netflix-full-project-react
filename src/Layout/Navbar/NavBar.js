@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
+import useAuth from '../../Hooks/useAuth';
+
 
 
 function NavBar() {
+  const {logout} = useAuth()
 
   const [isScrolled,setIsScrolled] = useState(false)
 
@@ -50,7 +53,8 @@ function NavBar() {
            <p className='hidden lg:inline'>Kids</p>
            <IoMdNotifications className="h-6 w-6"/>
            <Link to='/account' >
-              <img src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="" className='w-full h-8 cursor-pointer object-contain'/>
+              <img 
+               src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="" className='w-full h-8 cursor-pointer object-contain'/>
               
            </Link>
         </div>
