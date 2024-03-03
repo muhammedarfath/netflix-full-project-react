@@ -7,6 +7,7 @@ import Movies from './screens/Movies'
 import Login from './screens/Login'
 import { AuthProvider } from './Hooks/useAuth'
 import { RecoilRoot } from 'recoil'
+import Profile from './screens/Profile'
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<HomeScreen/>}/>
           <Route path='/tv-shows' element={<TvShows/>}/>
           <Route path='/movies' element={<Movies/>}/>
+          <Route path='/account' element={<Profile/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </AuthProvider>

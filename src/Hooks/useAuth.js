@@ -37,6 +37,7 @@ import {
     }, [navigate]);
   
     const SignUp = async (email, password) => {
+      
       setLoading(true);
   
       await createUserWithEmailAndPassword(auth, email, password)
@@ -52,6 +53,7 @@ import {
     };
   
     const SignIn = async (email, password) => {
+      
       setLoading(true);
   
       await signInWithEmailAndPassword(auth, email, password)

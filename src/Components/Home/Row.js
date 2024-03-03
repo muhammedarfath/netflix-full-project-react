@@ -18,7 +18,9 @@ function RowMovies({title,url,isLarge,showTopRating,icon}) {
         })
     }, [])
 
+    console.log("loading prob",movies)
 
+    
     const handleClick = (direction) => { 
         setIsMoved(true);
         if (rowRef.current) {

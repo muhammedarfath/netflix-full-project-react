@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import useAuth from '../../Hooks/useAuth';
+import BasicMenu from '../../Components/Menu/BasicMenu';
 
 
 
@@ -37,7 +38,7 @@ function NavBar() {
         {/* left area logo and menu items */}
         <div className='flex items-center space-x-2 md:space-x-10'>
             <img src="/images/favicon.png" width={100} height={100} alt="logo" className='cursor-pointer object-contain' />
-
+            <BasicMenu/>
             <ul className='hidden space-x-4 md:flex'>
                 <li className='headerLink'>Home</li>
                 <li className='headerLink'>Tv Shows</li>
